@@ -11,7 +11,7 @@ data "aws_ami" "amazon_linux_2" {
 resource "aws_instance" "web" {
   ami           = data.aws_ami.amazon_linux_2.id
   instance_type = "t2.large"
-  
+
   root_block_device {
     volume_size = 8
   }
@@ -23,7 +23,7 @@ resource "aws_instance" "web" {
   iam_instance_profile = aws_iam_instance_profile.ec2.name
 
   tags = {
-    "Name" = "dog-breed-classifier"
+    "Name"  = "dog-breed-classifier"
     project = var.project_name
   }
 
@@ -34,6 +34,6 @@ resource "aws_instance" "web" {
 }
 
 resource "aws_key_pair" "terraform_ec2_key" {
-	key_name = "dbc_key"
-	public_key = "${file("dbc_key.pub")}"
+  key_name   = "dbc_key"
+  public_key = file("dbc_key.pub")
 }
