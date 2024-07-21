@@ -4,3 +4,5 @@
 # Webapp
 venv/
 uploads/
+__pycache__/
+.pytest_cache
