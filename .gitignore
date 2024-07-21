@@ -1,1 +1,6 @@
+# Infrastructure
 .terraform/
+
+# Webapp
+venv/
+uploads/
