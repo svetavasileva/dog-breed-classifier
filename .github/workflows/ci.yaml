@@ -9,7 +9,6 @@ on:
       - main
 
 env:
-  REGISTRY: 730335217232.dkr.ecr.us-east-1.amazonaws.com
   REPOSITORY: dog-breed-classifier
   IMAGE_TAG: ${{ github.sha }}
 
@@ -34,7 +33,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Build WebApp
+      - name: Run Tests
         run: |
           pytest
 
@@ -68,7 +67,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-east-2
+          aws-region: us-east-1
 
       - name: Login to Amazon ECR
         if: github.ref == 'refs/heads/main'
