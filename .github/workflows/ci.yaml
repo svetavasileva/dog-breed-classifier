@@ -9,6 +9,7 @@ on:
       - main
 
 env:
+  REGISTRY: 730335217232.dkr.ecr.us-east-1.amazonaws.com
   REPOSITORY: dog-breed-classifier
   IMAGE_TAG: ${{ github.sha }}
 
