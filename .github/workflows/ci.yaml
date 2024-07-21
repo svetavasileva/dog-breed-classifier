@@ -81,6 +81,7 @@ jobs:
           docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
 
   deploy:
+    name: Deploy Webapp
     if: github.ref == 'refs/heads/main'
     needs: [test, build]
     runs-on: ubuntu-latest
@@ -88,8 +89,20 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Deploy application
-        env:
-          FLASK_ENV: production
+      - name: Install SSH client
+        run: sudo apt-get install -y openssh-client
+
+      - name: Add SSH key
+        uses: webfactory/ssh-agent@v0.8.1
+        with:
+          ssh-private-key: ${{ secrets.EC2_SSH_KEY }}
+
+      - name: Deploy to EC2
         run: |
-          echo "Deploy Webapp"
+          ssh -o StrictHostKeyChecking=no ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
+            aws ecr get-login-password --region us-east-1 | sudo docker login --username AWS --password-stdin ${{ env.REGISTRY }}
+            sudo docker pull $REGISTRY/$REPOSITORY:$IMAGE_TAG
+            docker stop my-app || true
+            docker rm my-app || true
+            docker run -d --name my-app -p 80:80 $REGISTRY/$REPOSITORY:$IMAGE_TAG
+          EOF

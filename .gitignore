@@ -1,5 +1,7 @@
 # Infrastructure
 .terraform/
+dbc_key
+dbc_key.pub
 
 # Webapp
 venv/
