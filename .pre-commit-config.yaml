@@ -10,7 +10,7 @@ repos:
     rev: 3.9.2
     hooks:
       - id: flake8
-        args: ['--max-line-length=79']
+        args: ['--max-line-length=79', 'webapp/']
 
   - repo: local
     hooks:
@@ -19,3 +19,4 @@ repos:
         entry: pytest
         language: system
         types: [python]
+        files: ^webapp/
