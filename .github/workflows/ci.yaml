@@ -98,7 +98,7 @@ jobs:
             sudo docker stop my-app || true
             sudo docker rm my-app || true
             sudo docker run -d --name my-app -p 80:80 \
-              -v /home/ec2-user:/app/model
+              -v /home/ec2-user:/app/model \
               -e MODEL_PATH="/app/model/dog_breed_classifier_model.h5" \
               ${{ env.REGISTRY }}/${{ env.REPOSITORY }}:${{ env.IMAGE_TAG }}
           EOF
