@@ -57,7 +57,6 @@ mlflow==2.14.3
 namex==0.0.8
 nodeenv==1.9.1
 numpy==1.26.4
-opencv-python==4.10.0.84
 opentelemetry-api==1.25.0
 opentelemetry-sdk==1.25.0
 opentelemetry-semantic-conventions==0.46b0
@@ -65,7 +64,6 @@ opt-einsum==3.3.0
 optree==0.12.1
 packaging==24.1
 pandas==2.2.2
-pillow==10.4.0
 platformdirs==4.2.2
 pluggy==1.5.0
 pre-commit==3.7.1
