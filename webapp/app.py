@@ -2,8 +2,8 @@ from flask import Flask, request, redirect, render_template  # type: ignore
 from werkzeug.utils import secure_filename  # type: ignore
 import os
 import time
-import sys
-import traceback
+# import sys
+# import traceback
 
 from predict import predict_dog_breed
 
@@ -44,14 +44,16 @@ def upload_file():
 
         file.save(file_path)
 
-        try:
-            dog_prediction = predict_dog_breed(file_path)
-        except Exception as err:
-            print(err, file=sys.stdout)
-            print(traceback.format_exc(), file=sys.stdout)
+        dog_prediction = predict_dog_breed(file_path)
 
-            dog_prediction = """Could not predict the dog breed.
-                                Please, try again."""
+        # try:
+        #     dog_prediction = predict_dog_breed(file_path)
+        # except Exception as err:
+        #     print(err, file=sys.stdout)
+        #     print(traceback.format_exc(), file=sys.stdout)
+
+        #     dog_prediction = """Could not predict the dog breed.
+        #                         Please, try again."""
 
         return render_template("upload.html",
                                prediction=dog_prediction, img_path=file_path)
