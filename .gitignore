@@ -11,3 +11,5 @@ venv/
 uploads/
 __pycache__/
 .pytest_cache
+static/
+webapp/dog_breed_classifier_model.h5

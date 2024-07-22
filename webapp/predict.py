@@ -1,4 +1,5 @@
 import numpy as np
+import os
 
 from keras.models import load_model
 from keras.preprocessing import image
@@ -21,7 +22,9 @@ def predict_dog_breed(img_path):
         9: 'Yorkshire Terrier'
     }
 
-    model = load_model('./dog_breed_classifier_model.h5')
+    dir_path = os.path.dirname(os.path.realpath(__file__))
+    model = load_model(dir_path + "/" +
+                       'dog_breed_classifier_model.h5')
 
     model.compile(loss='categorical_crossentropy',
                   optimizer='adam',

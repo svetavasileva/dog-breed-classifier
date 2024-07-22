@@ -44,12 +44,11 @@ def upload_file():
 
         try:
             dog_prediction = predict_dog_breed(file_path)
-        except (Exception):
-            dog_prediction = "Could not predict the dog" + \
-                  "breed. Please, try again."
-        finally:
-            if os.path.exists(file_path):
-                os.remove(file_path)
+        except Exception as err:
+            print(Exception, err)
+            dog_prediction = """Could not predict the dog breed.
+                                Please, try again."""
+
         return render_template("upload.html",
                                prediction=dog_prediction, img_path=file_path)
     return 'File type not allowed'
