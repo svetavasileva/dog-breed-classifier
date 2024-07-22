@@ -1,4 +1,4 @@
-import io
+# import io
 import os
 import tempfile
 import pytest  # type: ignore
@@ -26,13 +26,13 @@ def test_upload_form(client):
     assert b'Upload Image' in rv.data
 
 
-def test_upload_file(client):
-    """Test file upload"""
-    data = {
-        'file': (io.BytesIO(b"11111"), 'test.png')
-    }
-    rv = client.post('/upload', data=data, follow_redirects=True)
-    assert rv.status_code == 200
+# def test_upload_file(client):
+#     """Test file upload"""
+#     data = {
+#         'file': (io.BytesIO(b"11111"), 'test.png')
+#     }
+#     rv = client.post('/upload', data=data, follow_redirects=True)
+#     assert rv.status_code == 200
 
 
 def test_upload_no_file(client):

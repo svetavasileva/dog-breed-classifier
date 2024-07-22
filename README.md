@@ -3,6 +3,19 @@
 ## Problem Statement
 This project aims to develop a Flask-based web application that allows users to upload images of dogs, which are then classified into specific breeds using a pre-trained machine learning model. The project will also focus on employing MLOps techniques to ensure the application is robust and maintainable. This includes continuous integration, continuous deployment (CI/CD), automated testing, and containerization.
 
+## Objective
+The primary objective of this project is to create a web application that enables users to upload images of dogs and receive breed predictions. The project will cover the following key areas:
+- Image Upload Functionality: Implement a web interface where users can upload images of dogs.
+- Model Integration: Integrate a pre-trained machine learning model for dog breed classification.
+- Image Storage: Ensure images are stored on the server.
+- Prediction Retrieval: Provide a mechanism for users to view breed predictions.
+- Code Quality: Utilize linting tools (e.g., flake8) to maintain high code quality.
+- Automated Testing: Implement unit and integration tests using pytest to ensure the application works as expected.
+- Continuous Integration: Set up GitHub Actions to automate testing and linting on each commit.
+- Infrastructure as Code: AWS EC2 is created with the help of Terraform
+- Containerization: Use Docker to containerize the application for consistent deployment across different environments.
+- Makefile Automation: Create a Makefile to automate common tasks like building and running the Docker container, running tests, and linting.
+
 ## Infrastructure setup
 
 ### Generate EC2 instance SSH key
