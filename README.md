@@ -28,6 +28,14 @@ It needs MLFLOW instance running and AWS credentials to upload the artifact data
 
 `make train-model`
 
+GIT LFS is required to commit the model to the GitHub as it's more than 200MB.
+```
+git lfs install
+git lfs track "*.h5"
+git add .gitattributes
+git add model/dog_breed_classifier_model.h5
+```
+
 ## Webapp deployment
 Webapp is deployed with GitHub Actions automatically to the EC2 instance automatically. GHA workflow requires the following secrets to be setup in order to sucessfully proceed with the deployment:
 
