@@ -21,7 +21,7 @@ def predict_dog_breed(img_path):
         9: 'Yorkshire Terrier'
     }
 
-    model = load_model('./dog_breed_classifier_model.h5')
+    model = load_model('/model/dog_breed_classifier_model.h5')
 
     model.compile(loss='categorical_crossentropy',
                   optimizer='adam',

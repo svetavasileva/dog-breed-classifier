@@ -6,7 +6,7 @@ RUN pip install --upgrade pip setuptools wheel
 RUN apt-get update -y && \
     apt-get install -y libhdf5-dev pkg-config gcc
 
-COPY model/requirements.txt /app/
+COPY requirements.txt /app/
 
 RUN pip install --no-cache-dir -r requirements.txt
 

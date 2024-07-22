@@ -190,11 +190,11 @@ mlflow.end_run()
 
 
 # ## Predicting a random image
-model.save('/output/dog_breed_classifier_model.h5')
+model.save('./output/dog_breed_classifier_model.h5')
 
 
 # # Load the trained model
-model = load_model('/output/dog_breed_classifier_model.h5')
+model = load_model('./output/dog_breed_classifier_model.h5')
 
 
 # Predict for a random image
