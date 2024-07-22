@@ -44,7 +44,7 @@ def upload_file():
 
         try:
             dog_prediction = predict_dog_breed(file_path)
-        except(Exception):
+        except (Exception):
             dog_prediction = "Could not predict the dog" + \
                   "breed. Please, try again."
         finally:
