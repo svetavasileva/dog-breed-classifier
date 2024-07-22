@@ -1,5 +1,7 @@
 # mlops-project
 
+![alt text](intro.png "Dog Breed Classifier")
+
 ## Problem Statement
 This project aims to develop a Flask-based web application that allows users to upload images of dogs, which are then classified into specific breeds using a pre-trained machine learning model. The project will also focus on employing MLOps techniques to ensure the application is robust and maintainable. This includes continuous integration, continuous deployment (CI/CD), automated testing, and containerization.
 
