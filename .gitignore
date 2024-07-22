@@ -3,6 +3,9 @@
 dbc_key
 dbc_key.pub
 
+# Model
+venv-model/
+
 # Webapp
 venv/
 uploads/

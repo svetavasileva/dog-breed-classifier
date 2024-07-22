@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upload Image</title>
+    <title>Home</title>
 </head>
 <body>
     <h1>Upload Image</h1>
@@ -11,5 +11,10 @@
         <input type="file" name="file">
         <input type="submit" value="Upload">
     </form>
+
+	{% if prediction %}
+    <img src="{{img_path}}" height="400px" width="400px">
+	<h2> Your doggo is: <i> {{prediction}} </i></h2>
+	{% endif %}
 </body>
 </html>

@@ -1,9 +1,9 @@
 import io
 import os
 import tempfile
-import pytest
-from flask import Flask
+import pytest  # type: ignore
 from app import app
+
 
 @pytest.fixture
 def client():
@@ -18,11 +18,13 @@ def client():
     os.close(db_fd)
     os.unlink(app.config['DATABASE'])
 
+
 def test_upload_form(client):
     """Test that the upload form is accessible"""
     rv = client.get('/')
     assert rv.status_code == 200
     assert b'Upload Image' in rv.data
+
 
 def test_upload_file(client):
     """Test file upload"""
@@ -31,7 +33,8 @@ def test_upload_file(client):
     }
     rv = client.post('/upload', data=data, follow_redirects=True)
     assert rv.status_code == 200
-    assert b'File successfully uploaded: test.png' in rv.data
+    assert b'Could not predict the dogbreed. Please, try again.' in rv.data
+
 
 def test_upload_no_file(client):
     """Test uploading with no file"""
