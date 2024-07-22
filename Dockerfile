@@ -14,8 +14,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY webapp/ /app
 
-COPY model/dog_breed_classifier_model.h5 /app/
-
 EXPOSE 80
 
 ENV FLASK_APP=app.py

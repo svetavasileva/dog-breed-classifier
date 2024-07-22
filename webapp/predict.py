@@ -23,8 +23,10 @@ def predict_dog_breed(img_path):
     }
 
     dir_path = os.path.dirname(os.path.realpath(__file__))
-    model = load_model(dir_path + "/" +
-                       'dog_breed_classifier_model.h5')
+    MODEL_PATH = os.environ['MODEL_PATH'] or (
+        dir_path + "/ " + 'dog_breed_classifier_model.h5')
+
+    model = load_model(MODEL_PATH)
 
     model.compile(loss='categorical_crossentropy',
                   optimizer='adam',

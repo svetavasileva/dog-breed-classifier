@@ -13,3 +13,4 @@ train-model: build
 		$$IMAGE_HASH
 
 	mv $(pwd)/model/output/dog_breed_classifier_model.h5 $(pwd)/model
+	scp -i "iac/dbc_key" $(pwd)/model/dog_breed_classifier_model.h5 ec2-user@ec2-54-91-116-13.compute-1.amazonaws.com:~/.
