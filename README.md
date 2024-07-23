@@ -5,6 +5,8 @@
 ## Problem Statement
 This project aims to develop a Flask-based web application that allows users to upload images of dogs, which are then classified into specific breeds using a pre-trained machine learning model. The project will also focus on employing MLOps techniques to ensure the application is robust and maintainable. This includes continuous integration, continuous deployment (CI/CD), automated testing, and containerization.
 
+http://ec2-54-91-116-13.compute-1.amazonaws.com/upload
+
 ## Objective
 The primary objective of this project is to create a web application that enables users to upload images of dogs and receive breed predictions. The project will cover the following key areas:
 - Image Upload Functionality: Implement a web interface where users can upload images of dogs.
